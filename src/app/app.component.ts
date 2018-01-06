@@ -64,7 +64,11 @@ export class AppComponent {
 
   // se crea la lista de los productos se estan en el localStorage
   addlista(){
-    this.productos = JSON.parse(localStorage.productos)
+    if(localStorage.productos){
+      this.productos = JSON.parse(localStorage.productos);  
+    }else{
+      localStorage.setItem('productos', JSON.stringify(this.productos));
+    }    
   }
 
 }
