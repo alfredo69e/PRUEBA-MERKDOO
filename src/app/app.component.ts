@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   abrirAgregar;
- public producto;
- public productos;
- abrirBtnEditar;
+  producto;
+  productos;
+  abrirBtnEditar;
 
 
   constructor(){
@@ -62,7 +62,7 @@ export class AppComponent {
     this.abrirAgregar = false;
   }
 
-  // se crea la lista de los productos se estan en el localStorage
+  // se crea la lista de los productos si estan en el localStorage
   addlista(){
     if(localStorage.productos){
       this.productos = JSON.parse(localStorage.productos);  

@@ -23,19 +23,20 @@
                     <br>
                       <form #Form="ngForm">
                           <div class="form-group">
-                            <label >Nombre</label>
+                            <label ><strong class="text-danger"> * </strong> Nombre</label>
                             <input type="text" class="form-control"  placeholder="Nombre" name="nombre" [(ngModel)]="producto.nombre" required>
                           </div>
                           <div class="form-group">
-                              <label >Descripcion</label>
+                              <label ><strong class="text-danger"> * </strong> Descripcion</label>
                               <input type="text" class="form-control"  placeholder="Descripcion"  name="descripcion" [(ngModel)]="producto.descripcion" required>
                           </div>
                           <div class="form-group">
-                              <label >Sku</label>
+                              <label ><strong class="text-danger"> * </strong> Sku</label>
                               <input type="text" class="form-control"  placeholder="Sku"  name="sku" [(ngModel)]="producto.sku" required>
                           </div>
                           <br>
                         </form> 
+                        <p class="text-danger" style="font-size: 12px">Todos los campos con asteriscos (*) son obligatorios</p>
                         <div *ngIf="!abrirBtnEditar">
                             <button type="submit" class="btn btn-primary btn-block" [disabled]="Form.form.invalid " (click)="add(producto)"> <i class="fa fa-floppy-o"></i> Agregar </button>
                         </div> 
@@ -51,7 +52,9 @@
             </div>
       </div>
       <div class="row marketing" *ngIf="productos.length === 0 ">
-        <h5>No Posee Productos Registrados</h5>
+          <div class="col-lg-12">
+            <h5>No Posee Productos Registrados</h5>
+          </div>
       </div>
 
       <div class="row marketing" *ngIf="productos.length !== 0">
